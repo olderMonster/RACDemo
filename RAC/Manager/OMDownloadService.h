@@ -40,7 +40,27 @@ NS_ASSUME_NONNULL_BEGIN
  @param downloadService 当前任务
  @param fullPath 文件本地路径
  */
-- (void)service:(OMDownloadService *)downloadService didDownloadedFile:(NSString *)fullPath;
+- (void)service:(OMDownloadService *)downloadService didDownloadedFileComplete:(NSString *)fullPath;
+
+
+
+/**
+ 文件下载成功.注意，在走该方法之前会先调用“service:(OMDownloadService *)downloadService didDownloadedFileComplete:(NSString *)fullPath”的方法
+
+ @param downladService 当前任务
+ @param fullPath 文件本地路径
+ */
+- (void)service:(OMDownloadService *)downladService didSucceedDownloadFile:(NSString *)fullPath;
+
+
+
+/**
+ 下载文本失败
+
+ @param downladService 当前任务
+ @param error 错误信息
+ */
+- (void)service:(OMDownloadService *)downladService didFailedDownloadFile:(NSError *)error;
 
 @end
 
@@ -48,6 +68,11 @@ NS_ASSUME_NONNULL_BEGIN
 @interface OMDownloadService : NSObject
 
 
+
+/**
+ 文件本地路径
+ */
+@property (nonatomic , strong , readonly)NSString *fullPath;
 
 /**
  下载资源的url

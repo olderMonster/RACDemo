@@ -70,28 +70,30 @@ static OMDownloadManager *sharedInstance = nil;
  */
 - (void)service:(OMDownloadService *)downloadService didDownloadedFile:(NSString *)fullPath{
     
-    UIImage *image = [[UIImage alloc] initWithContentsOfFile:fullPath];
-    [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
-        //写入图片到相册
-        [PHAssetChangeRequest creationRequestForAssetFromImage:image];
-    } completionHandler:^(BOOL success, NSError * _Nullable error) {
-        if (error) {
-            NSLog(@"保存失败 = %@",error);
-        }else{
-            NSLog(@"保存成功 = %d", success);
-        }
-        NSFileManager *fileManager = [NSFileManager defaultManager];
-        if ([fileManager fileExistsAtPath:fullPath]) {
-            NSError *error = nil;
-            [fileManager removeItemAtURL:[NSURL fileURLWithPath:fullPath] error:&error];
-            if (error) {
-                NSLog(@"移除本地下载图片失败");
-            }
-        }
-        
-        //当下载任务完成后更新任务列表
-        [self updateCache:downloadService];
-    }];
+//    UIImage *image = [[UIImage alloc] initWithContentsOfFile:fullPath];
+//    [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
+//        //写入图片到相册
+//        [PHAssetChangeRequest creationRequestForAssetFromImage:image];
+//    } completionHandler:^(BOOL success, NSError * _Nullable error) {
+//        if (error) {
+//            NSLog(@"保存失败 = %@",error);
+//        }else{
+//            NSLog(@"保存成功 = %d", success);
+//        }
+//        NSFileManager *fileManager = [NSFileManager defaultManager];
+//        if ([fileManager fileExistsAtPath:fullPath]) {
+//            NSError *error = nil;
+//            [fileManager removeItemAtURL:[NSURL fileURLWithPath:fullPath] error:&error];
+//            if (error) {
+//                NSLog(@"移除本地下载图片失败");
+//            }
+//        }
+//
+//
+//    }];
+    
+    //当下载任务完成后更新任务列表
+    [self updateCache:downloadService];
 }
 
 

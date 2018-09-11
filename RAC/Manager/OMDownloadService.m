@@ -13,10 +13,21 @@
 @interface OMDownloadService()<NSURLSessionDataDelegate>
 
 
+/**
+ 下载进度
+ */
 @property (nonatomic , assign , readwrite)CGFloat progress;
+
+/**
+ 下载资源的url
+ */
 @property (nonatomic , strong , readwrite)NSString *url;
 
 
+/**
+ 文件本地路径
+ */
+@property (nonatomic , strong , readwrite)NSString *fullPath;
 
 @property (nonatomic , strong)NSURLSession *session;
 
@@ -88,8 +99,9 @@ totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite{
 didFinishDownloadingToURL:(NSURL *)location{
     NSString *fullPath = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingString:downloadTask.response.suggestedFilename];
     [[NSFileManager defaultManager] moveItemAtURL:location toURL:[NSURL fileURLWithPath:fullPath] error:nil];
-    if (self.delegate && [self.delegate respondsToSelector:@selector(service:didDownloadedFile:)]) {
-        [self.delegate service:self didDownloadedFile:fullPath];
+    self.fullPath = fullPath;
+    if (self.delegate && [self.delegate respondsToSelector:@selector(service:didDownloadedFileComplete:)]) {
+        [self.delegate service:self didDownloadedFileComplete:fullPath];
     }
     
 }
@@ -98,9 +110,16 @@ didFinishDownloadingToURL:(NSURL *)location{
 /**
  请求结束时调用
  */
-- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error
-{
-    NSLog(@"didCompleteWithError");
+- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error{
+    if (error) {
+        if (self.delegate && [self.delegate respondsToSelector:@selector(service:didFailedDownloadFile:)]) {
+            [self.delegate service:self didFailedDownloadFile:error];
+        }
+    }else{
+        if (self.delegate && [self.delegate respondsToSelector:@selector(service:didSucceedDownloadFile:)]) {
+            [self.delegate service:self didSucceedDownloadFile:self.fullPath];
+        }
+    }
 }
 
 
