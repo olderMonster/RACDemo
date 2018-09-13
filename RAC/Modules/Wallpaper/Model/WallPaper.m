@@ -17,6 +17,7 @@
         self.thumb = wallpaper[@"thumb"];
         self.img = wallpaper[@"img"];
         self.rank = [wallpaper[@"rank"] integerValue];
+        self.favs = [wallpaper[@"favs"] integerValue];
     }
     return self;
 }

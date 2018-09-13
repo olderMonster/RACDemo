@@ -100,9 +100,15 @@ static OMDownloadManager *sharedInstance = nil;
 #pragma mark -- getters and setters
 - (NSMutableArray *)downloadProxyMArray{
     if (_downloadProxyMArray == nil) {
+        _downloadProxyMArray = [[NSMutableArray alloc] init];
         NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:kDownloadTasksCacheKey];
-        NSArray *array = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-        _downloadProxyMArray = [[NSMutableArray alloc] initWithArray:array];
+        if (data) {
+            NSArray *array = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+            if (array) {
+                [_downloadProxyMArray addObjectsFromArray:array];
+            }
+        }
+        
     }
     return _downloadProxyMArray;
 }

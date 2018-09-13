@@ -34,18 +34,21 @@
     
     NSMutableArray *tmpMArray = [[NSMutableArray alloc] init];
     NSArray *downloadTasks = [OMDownloadManager sharedInstance].downloadProxyMArray;
-    for (NSInteger index = 0; index < downloadTasks.count; index ++) {
-        OMDownloadService *downloadService = downloadTasks[index];
-        downloadService.delegate = self;
-        
-        DownloadView *downloadView = [[DownloadView alloc] initWithFrame:CGRectMake(20, 64 + 10 + (50 + 10) * index, self.view.bounds.size.width - 40, 50)];
-        downloadView.backgroundColor = [UIColor lightGrayColor];
-        downloadView.downloadService = downloadService;
-        downloadView.progress = downloadService.progress;
-        [self.view addSubview:downloadView];
-        
-        [tmpMArray addObject:downloadView];
+    if (downloadTasks && downloadTasks.count > 0) {
+        for (NSInteger index = 0; index < downloadTasks.count; index ++) {
+            OMDownloadService *downloadService = downloadTasks[index];
+            downloadService.delegate = self;
+            
+            DownloadView *downloadView = [[DownloadView alloc] initWithFrame:CGRectMake(20, 64 + 10 + (50 + 10) * index, self.view.bounds.size.width - 40, 50)];
+            downloadView.backgroundColor = [UIColor lightGrayColor];
+            downloadView.downloadService = downloadService;
+            downloadView.progress = downloadService.progress;
+            [self.view addSubview:downloadView];
+            
+            [tmpMArray addObject:downloadView];
+        }
     }
+
     self.downloadViewsArray = tmpMArray.copy;
 }
 
@@ -58,8 +61,6 @@
         }
     }
 }
-
-#pragma mark -- getters and setters
 
 
 

@@ -94,4 +94,33 @@
 }
 
 
+- (RACCommand *)commentsCommand{
+    if (_commentsCommand == nil) {
+        _commentsCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+            return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+                NSString *categoryId = input;
+                NSString *url = [NSString stringWithFormat:@"http://service.picasso.adesk.com/v2/vertical/vertical/%@/comment",categoryId];
+                [[OMApiProxy sharedInstance] getUrlName:url paramaters:nil success:^(NSDictionary *responseObject) {
+                    NSInteger code = [responseObject[@"code"] integerValue];
+                    if (code == 0) {
+                        NSArray *vertical = responseObject[@"res"][@"comment"];
+                        [subscriber sendNext:vertical];
+                        //一定要加上sendCompleted这个方法,不然无法再次执行该command
+                        [subscriber sendCompleted];
+                    }else{
+                        //一定要加上sendCompleted这个方法,不然无法再次执行该command
+                        [subscriber sendError:nil];
+                    }
+                    
+                } failure:^(NSError *error) {
+                    [subscriber sendError:error];
+                }];
+                
+                return  nil;
+            }];
+        }];
+    }
+    return _commentsCommand;
+}
+
 @end

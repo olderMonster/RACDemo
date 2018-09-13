@@ -11,8 +11,11 @@
 #import "WallPaper.h"
 #import "OMDownloadManager.h"
 #import "WallPaperViewModel.h"
+#import "CTMediator+WallPaper.h"
 
 #import "WallPaperCell.h"
+
+
 
 #import <Photos/Photos.h>
 
@@ -125,22 +128,38 @@
     }
     IDMPhotoBrowser *browser = [[IDMPhotoBrowser alloc] initWithPhotos:tmpMArray];
     [browser setInitialPageIndex:indexPath.row];
-    browser.actionButtonTitles = @[@"下载"];
+    browser.actionButtonTitles = @[@"下载",@"评论"];
     browser.delegate = self;
     [self presentViewController:browser animated:YES completion:nil];
+
 }
 
 #pragma mark -- IDMPhotoBrowserDelegate
 - (void)photoBrowser:(IDMPhotoBrowser *)photoBrowser didDismissActionSheetWithButtonIndex:(NSUInteger)buttonIndex photoIndex:(NSUInteger)photoIndex{
-    PHAuthorizationStatus status = [PHPhotoLibrary authorizationStatus];
-    if (status == PHAuthorizationStatusRestricted || status == PHAuthorizationStatusDenied){
-        // 无权限
-        [SVProgressHUD showWithStatus:@"请前往“设置-隐私-照片”中授权应用读取和写入照片"];
-    }else{
-        WallPaper *wallpaper = self.wallpapersArray[photoIndex];
-        [[OMDownloadManager sharedInstance] download:[NSString stringWithFormat:@"http://img5.adesk.com/%@",wallpaper.wid]];
+    if (buttonIndex == 0){
+        PHAuthorizationStatus status = [PHPhotoLibrary authorizationStatus];
+        if (status == PHAuthorizationStatusRestricted || status == PHAuthorizationStatusDenied){
+            // 无权限
+            [SVProgressHUD showWithStatus:@"请前往“设置-隐私-照片”中授权应用读取和写入照片"];
+        }else{
+            WallPaper *wallpaper = self.wallpapersArray[photoIndex];
+            [[OMDownloadManager sharedInstance] download:[NSString stringWithFormat:@"http://img5.adesk.com/%@",wallpaper.wid]];
+        }
     }
+    if (buttonIndex == 1) {
+        [photoBrowser dismissViewControllerAnimated:YES completion:^{
+            WallPaper *wallpaper = self.wallpapersArray[photoIndex];
+            UIViewController *commentVC = [[CTMediator sharedInstance] CTMediator_viewControllerForWallPaperCommentViewController:@{@"wallpaperId":wallpaper.wid}];
+            [self.navigationController pushViewController:commentVC animated:YES];
+        }];
+    }
+}
 
+- (IDMCaptionView *)photoBrowser:(IDMPhotoBrowser *)photoBrowser captionViewForPhotoAtIndex:(NSUInteger)index{
+    WallPaper *wallpaper = self.wallpapersArray[index];
+    IDMPhoto *photo = [IDMPhoto photoWithURL:[NSURL URLWithString:wallpaper.img]];
+    IDMCaptionView *view = [[IDMCaptionView alloc] initWithPhoto:photo];
+    return view;
 }
 
 #pragma mark -- getters and setters

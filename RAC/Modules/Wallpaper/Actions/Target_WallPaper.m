@@ -10,6 +10,7 @@
 
 #import "WallPaperCategoryViewController.h"
 #import "WallPaperViewController.h"
+#import "WallPaperCommentViewController.h"
 
 @implementation Target_WallPaper
 
@@ -22,6 +23,12 @@
     WallPaperViewController *wallpaperVC = [[WallPaperViewController alloc] init];
     wallpaperVC.categoryId = params[@"categoryId"];
     return wallpaperVC;
+}
+
+- (UIViewController *)Action_nativeFetchWallPaperCommentViewController:(NSDictionary *)params{
+    WallPaperCommentViewController *commentVC = [[WallPaperCommentViewController alloc] init];
+    commentVC.wallpaperId = params[@"wallpaperId"];
+    return commentVC;
 }
 
 @end

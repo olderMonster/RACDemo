@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (UIViewController *)CTMediator_viewControllerForWallPaperCategoryViewController;
 - (UIViewController *)CTMediator_viewControllerForWallPaperViewController:(NSDictionary *)params;
+- (UIViewController *)CTMediator_viewControllerForWallPaperCommentViewController:(NSDictionary *)params;
 
 @end
 

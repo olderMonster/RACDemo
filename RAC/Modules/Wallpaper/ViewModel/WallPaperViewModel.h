@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic , strong)RACCommand *listCommand;
 
-//@property (nonatomic , strong)RACCommand *downloadCommand;
+@property (nonatomic , strong)RACCommand *commentsCommand;
 
 @end
 

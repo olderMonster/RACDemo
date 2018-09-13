@@ -17,6 +17,10 @@
 		57247A5B214750610044D245 /* Target_Download.m in Sources */ = {isa = PBXBuildFile; fileRef = 57247A5A214750610044D245 /* Target_Download.m */; };
 		57247A5F214751410044D245 /* Target_WallPaper.m in Sources */ = {isa = PBXBuildFile; fileRef = 57247A5E214751410044D245 /* Target_WallPaper.m */; };
 		57247A6221475ACB0044D245 /* OMDownloadService.m in Sources */ = {isa = PBXBuildFile; fileRef = 57247A6121475ACB0044D245 /* OMDownloadService.m */; };
+		5737E65D2148A25000423E9E /* DateFormatterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5737E65C2148A25000423E9E /* DateFormatterManager.m */; };
+		5737E6602148A7D000423E9E /* NSDate+RAC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5737E65F2148A7D000423E9E /* NSDate+RAC.m */; };
+		5737E6632148B1FF00423E9E /* UIImage+RAC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5737E6622148B1FF00423E9E /* UIImage+RAC.m */; };
+		5737E6662148B3D500423E9E /* UIImageView+RAC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5737E6652148B3D500423E9E /* UIImageView+RAC.m */; };
 		574B92DD21424F87008891EE /* Target_Login.m in Sources */ = {isa = PBXBuildFile; fileRef = 574B92DB21424F87008891EE /* Target_Login.m */; };
 		57654F292138E94200E406F4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 57654F282138E94200E406F4 /* AppDelegate.m */; };
 		57654F312138E94200E406F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57654F302138E94200E406F4 /* Assets.xcassets */; };
@@ -25,6 +29,13 @@
 		57654F5A2138E9F700E406F4 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57654F592138E9F700E406F4 /* HomeViewController.m */; };
 		57654F5D2138EA0000E406F4 /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57654F5C2138EA0000E406F4 /* UserViewController.m */; };
 		57654F602138EA0C00E406F4 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57654F5F2138EA0C00E406F4 /* RootViewController.m */; };
+		57840A8C2147B984004D299F /* WallPaperCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57840A8B2147B984004D299F /* WallPaperCommentViewController.m */; };
+		57840A8F2147BB62004D299F /* WallPaperCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 57840A8E2147BB62004D299F /* WallPaperCommentCell.m */; };
+		57840A922147BD4D004D299F /* WallPaperComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 57840A912147BD4D004D299F /* WallPaperComment.m */; };
+		57840A952147BF66004D299F /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 57840A942147BF66004D299F /* User.m */; };
+		57840A982147C465004D299F /* WallPaperCommentCellFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 57840A972147C465004D299F /* WallPaperCommentCellFrame.m */; };
+		57840A9B2147C50D004D299F /* LikeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 57840A9A2147C50D004D299F /* LikeButton.m */; };
+		57840A9F2147C719004D299F /* UIColor+RAC.m in Sources */ = {isa = PBXBuildFile; fileRef = 57840A9D2147C719004D299F /* UIColor+RAC.m */; };
 		57BD91B321461772005762D0 /* WallPaperCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57BD91B221461772005762D0 /* WallPaperCategoryViewController.m */; };
 		57BD91B621461B1D005762D0 /* WallPaperViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 57BD91B521461B1D005762D0 /* WallPaperViewModel.m */; };
 		57BD91B921461DA2005762D0 /* WallPaperCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 57BD91B821461DA2005762D0 /* WallPaperCategoryCell.m */; };
@@ -75,6 +86,14 @@
 		57247A5E214751410044D245 /* Target_WallPaper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Target_WallPaper.m; sourceTree = "<group>"; };
 		57247A6021475ACB0044D245 /* OMDownloadService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OMDownloadService.h; sourceTree = "<group>"; };
 		57247A6121475ACB0044D245 /* OMDownloadService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OMDownloadService.m; sourceTree = "<group>"; };
+		5737E65B2148A25000423E9E /* DateFormatterManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DateFormatterManager.h; sourceTree = "<group>"; };
+		5737E65C2148A25000423E9E /* DateFormatterManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DateFormatterManager.m; sourceTree = "<group>"; };
+		5737E65E2148A7D000423E9E /* NSDate+RAC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+RAC.h"; sourceTree = "<group>"; };
+		5737E65F2148A7D000423E9E /* NSDate+RAC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+RAC.m"; sourceTree = "<group>"; };
+		5737E6612148B1FF00423E9E /* UIImage+RAC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+RAC.h"; sourceTree = "<group>"; };
+		5737E6622148B1FF00423E9E /* UIImage+RAC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RAC.m"; sourceTree = "<group>"; };
+		5737E6642148B3D500423E9E /* UIImageView+RAC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+RAC.h"; sourceTree = "<group>"; };
+		5737E6652148B3D500423E9E /* UIImageView+RAC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+RAC.m"; sourceTree = "<group>"; };
 		574B92DB21424F87008891EE /* Target_Login.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Target_Login.m; sourceTree = "<group>"; };
 		574B92DC21424F87008891EE /* Target_Login.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Target_Login.h; sourceTree = "<group>"; };
 		57654F242138E94200E406F4 /* RAC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RAC.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +111,20 @@
 		57654F5C2138EA0000E406F4 /* UserViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
 		57654F5E2138EA0C00E406F4 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		57654F5F2138EA0C00E406F4 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		57840A8A2147B984004D299F /* WallPaperCommentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WallPaperCommentViewController.h; sourceTree = "<group>"; };
+		57840A8B2147B984004D299F /* WallPaperCommentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WallPaperCommentViewController.m; sourceTree = "<group>"; };
+		57840A8D2147BB62004D299F /* WallPaperCommentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WallPaperCommentCell.h; sourceTree = "<group>"; };
+		57840A8E2147BB62004D299F /* WallPaperCommentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WallPaperCommentCell.m; sourceTree = "<group>"; };
+		57840A902147BD4D004D299F /* WallPaperComment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WallPaperComment.h; sourceTree = "<group>"; };
+		57840A912147BD4D004D299F /* WallPaperComment.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WallPaperComment.m; sourceTree = "<group>"; };
+		57840A932147BF66004D299F /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		57840A942147BF66004D299F /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		57840A962147C465004D299F /* WallPaperCommentCellFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WallPaperCommentCellFrame.h; sourceTree = "<group>"; };
+		57840A972147C465004D299F /* WallPaperCommentCellFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WallPaperCommentCellFrame.m; sourceTree = "<group>"; };
+		57840A992147C50D004D299F /* LikeButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LikeButton.h; sourceTree = "<group>"; };
+		57840A9A2147C50D004D299F /* LikeButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LikeButton.m; sourceTree = "<group>"; };
+		57840A9D2147C719004D299F /* UIColor+RAC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+RAC.m"; sourceTree = "<group>"; };
+		57840A9E2147C719004D299F /* UIColor+RAC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+RAC.h"; sourceTree = "<group>"; };
 		57BD91B121461772005762D0 /* WallPaperCategoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WallPaperCategoryViewController.h; sourceTree = "<group>"; };
 		57BD91B221461772005762D0 /* WallPaperCategoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WallPaperCategoryViewController.m; sourceTree = "<group>"; };
 		57BD91B421461B1D005762D0 /* WallPaperViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WallPaperViewModel.h; sourceTree = "<group>"; };
@@ -150,6 +183,8 @@
 				57BD91D021466E54005762D0 /* OMDownloadManager.m */,
 				57247A6021475ACB0044D245 /* OMDownloadService.h */,
 				57247A6121475ACB0044D245 /* OMDownloadService.m */,
+				5737E65B2148A25000423E9E /* DateFormatterManager.h */,
+				5737E65C2148A25000423E9E /* DateFormatterManager.m */,
 			);
 			path = Manager;
 			sourceTree = SOURCE_ROOT;
@@ -157,6 +192,7 @@
 		571F60B321424B1C0024C840 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				57840A9C2147C70A004D299F /* Common */,
 				57247A5421474FB60044D245 /* Download */,
 				57247A5021474F370044D245 /* WallPaper */,
 				571F60B421424B1C0024C840 /* Login */,
@@ -384,6 +420,8 @@
 		57654F562138E9E000E406F4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				57840A932147BF66004D299F /* User.h */,
+				57840A942147BF66004D299F /* User.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -393,6 +431,21 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		57840A9C2147C70A004D299F /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				57840A9E2147C719004D299F /* UIColor+RAC.h */,
+				57840A9D2147C719004D299F /* UIColor+RAC.m */,
+				5737E65E2148A7D000423E9E /* NSDate+RAC.h */,
+				5737E65F2148A7D000423E9E /* NSDate+RAC.m */,
+				5737E6612148B1FF00423E9E /* UIImage+RAC.h */,
+				5737E6622148B1FF00423E9E /* UIImage+RAC.m */,
+				5737E6642148B3D500423E9E /* UIImageView+RAC.h */,
+				5737E6652148B3D500423E9E /* UIImageView+RAC.m */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		57BD91AC21461758005762D0 /* Wallpaper */ = {
@@ -423,6 +476,8 @@
 				57BD91B221461772005762D0 /* WallPaperCategoryViewController.m */,
 				57BD91BD2146598C005762D0 /* WallPaperViewController.h */,
 				57BD91BE2146598C005762D0 /* WallPaperViewController.m */,
+				57840A8A2147B984004D299F /* WallPaperCommentViewController.h */,
+				57840A8B2147B984004D299F /* WallPaperCommentViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -434,6 +489,10 @@
 				57BD91BB21461E66005762D0 /* WallPaperCategory.m */,
 				57BD91C321465F5D005762D0 /* WallPaper.h */,
 				57BD91C421465F5D005762D0 /* WallPaper.m */,
+				57840A902147BD4D004D299F /* WallPaperComment.h */,
+				57840A912147BD4D004D299F /* WallPaperComment.m */,
+				57840A962147C465004D299F /* WallPaperCommentCellFrame.h */,
+				57840A972147C465004D299F /* WallPaperCommentCellFrame.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -445,6 +504,10 @@
 				57BD91B821461DA2005762D0 /* WallPaperCategoryCell.m */,
 				57BD91C021465C79005762D0 /* WallPaperCell.h */,
 				57BD91C121465C79005762D0 /* WallPaperCell.m */,
+				57840A8D2147BB62004D299F /* WallPaperCommentCell.h */,
+				57840A8E2147BB62004D299F /* WallPaperCommentCell.m */,
+				57840A992147C50D004D299F /* LikeButton.h */,
+				57840A9A2147C50D004D299F /* LikeButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -656,31 +719,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57840A952147BF66004D299F /* User.m in Sources */,
 				57654F372138E94200E406F4 /* main.m in Sources */,
 				57654F5D2138EA0000E406F4 /* UserViewController.m in Sources */,
 				57BD91B921461DA2005762D0 /* WallPaperCategoryCell.m in Sources */,
+				57840A9F2147C719004D299F /* UIColor+RAC.m in Sources */,
+				57840A922147BD4D004D299F /* WallPaperComment.m in Sources */,
 				57066987213904F40054A2B8 /* LoginViewController.m in Sources */,
 				57247A5321474F420044D245 /* CTMediator+WallPaper.m in Sources */,
 				57BD91D121466E54005762D0 /* OMDownloadManager.m in Sources */,
 				57BD91D621466F71005762D0 /* DownloadViewController.m in Sources */,
 				571F60B721424B850024C840 /* CTMediator+Login.m in Sources */,
+				57840A8F2147BB62004D299F /* WallPaperCommentCell.m in Sources */,
 				57BD91B621461B1D005762D0 /* WallPaperViewModel.m in Sources */,
 				57BD91C221465C79005762D0 /* WallPaperCell.m in Sources */,
 				574B92DD21424F87008891EE /* Target_Login.m in Sources */,
 				57BD91BF2146598C005762D0 /* WallPaperViewController.m in Sources */,
+				5737E6602148A7D000423E9E /* NSDate+RAC.m in Sources */,
 				57654F292138E94200E406F4 /* AppDelegate.m in Sources */,
 				5706698A213905080054A2B8 /* LoginViewModel.m in Sources */,
+				5737E6662148B3D500423E9E /* UIImageView+RAC.m in Sources */,
 				57BD91BC21461E66005762D0 /* WallPaperCategory.m in Sources */,
 				57247A5B214750610044D245 /* Target_Download.m in Sources */,
+				57840A982147C465004D299F /* WallPaperCommentCellFrame.m in Sources */,
 				57D9BE4B2142522B0018D5D3 /* RegisterViewController.m in Sources */,
 				57654F5A2138E9F700E406F4 /* HomeViewController.m in Sources */,
+				57840A8C2147B984004D299F /* WallPaperCommentViewController.m in Sources */,
 				57BD91C521465F5D005762D0 /* WallPaper.m in Sources */,
+				5737E6632148B1FF00423E9E /* UIImage+RAC.m in Sources */,
 				571F60B2214247200024C840 /* ForgotPsdViewController.m in Sources */,
+				5737E65D2148A25000423E9E /* DateFormatterManager.m in Sources */,
 				57654F602138EA0C00E406F4 /* RootViewController.m in Sources */,
 				57247A5F214751410044D245 /* Target_WallPaper.m in Sources */,
 				57BD91DA21466FF5005762D0 /* DownloadView.m in Sources */,
 				57BD91B321461772005762D0 /* WallPaperCategoryViewController.m in Sources */,
 				57D9BE4E214257E30018D5D3 /* RegisterViewModel.m in Sources */,
+				57840A9B2147C50D004D299F /* LikeButton.m in Sources */,
 				5706698E213908B90054A2B8 /* OMApiProxy.m in Sources */,
 				57247A5721474FFC0044D245 /* CTMediator+Download.m in Sources */,
 				57247A6221475ACB0044D245 /* OMDownloadService.m in Sources */,

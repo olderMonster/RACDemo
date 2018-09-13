@@ -41,7 +41,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic , copy)NSString *wid;
 @property (nonatomic , copy)NSString *thumb;
 @property (nonatomic , copy)NSString *img;
-@property (nonatomic , assign)NSInteger rank;
+@property (nonatomic , assign)NSInteger rank;  //点赞数
+@property (nonatomic , assign)NSInteger favs;  //收藏数
+@property (nonatomic , copy)NSString *wp; //手机版下载地址
 
 - (instancetype)initWithWallPaper:(NSDictionary *)wallpaperl;
 
