@@ -30,7 +30,7 @@
         
         self.avatarImageViewRect = CGRectMake(contentEdgeInset.left, contentEdgeInset.top, 40, 40);
         
-        CGSize sizeTextSize = [comment.sizeStr sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:kLikeButtonCountFontSize]}];
+        CGSize sizeTextSize = [comment.sizeStr sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:kCommentLikeCountFontSize]}];
         //点赞按钮中文本与图片间距为10
         CGFloat likeButtonW = sizeTextSize.width + 10 + kLikeButtonImageSize;
         self.likeButtonRect = CGRectMake(maxContentX - likeButtonW, self.avatarImageViewRect.origin.y + 5, likeButtonW, 20);

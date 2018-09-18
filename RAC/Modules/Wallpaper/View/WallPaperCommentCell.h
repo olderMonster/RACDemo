@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 extern CGFloat const kCommentUserNameFontSize;
 extern CGFloat const kCommentCreateAtFontSize;
 extern CGFloat const kCommentContentFontSize;
-
+extern CGFloat const kCommentLikeCountFontSize;
 
 @protocol WallPaperCommentCellDelegate <NSObject>
 

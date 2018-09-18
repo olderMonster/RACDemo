@@ -14,7 +14,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)sharedInstance;
 
+//文章
 - (NSString *)createAt:(double)timeInterval;
+
+//视频发布时间
+- (NSString *)releaseTime:(double)time;
 
 @end
 

@@ -8,15 +8,14 @@
 
 #import "LikeButton.h"
 
-CGFloat const kLikeButtonCountFontSize = 13;
 CGFloat const kLikeButtonImageSize = 17;
 
 @implementation LikeButton
 
-- (instancetype)init{
-    self = [super init];
+- (instancetype)initWithFrame:(CGRect)frame{
+    self = [super initWithFrame:frame];
     if (self) {
-        
+        self.titleLabel.textAlignment = NSTextAlignmentCenter;
     }
     return self;
 }
@@ -32,7 +31,7 @@ CGFloat const kLikeButtonImageSize = 17;
 
 
 - (CGRect)titleRectForContentRect:(CGRect)contentRect{
-    CGFloat x = CGRectGetMaxX(self.imageView.frame) + 3;
+    CGFloat x = CGRectGetMaxX(self.imageView.frame);
     CGFloat y = 0;
     CGFloat width = contentRect.size.width - x;
     CGFloat height = contentRect.size.height;

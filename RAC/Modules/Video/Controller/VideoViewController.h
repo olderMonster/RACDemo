@@ -1,19 +1,16 @@
 //
-//  LikeButton.h
+//  VideoViewController.h
 //  RAC
 //
-//  Created by 印聪 on 2018/9/11.
+//  Created by 印聪 on 2018/9/13.
 //  Copyright © 2018年 印聪. All rights reserved.
-//  点赞按钮
+//
 
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-extern CGFloat const kLikeButtonImageSize;
-
-@interface LikeButton : UIButton
-
+@interface VideoViewController : UIViewController
 
 @end
 

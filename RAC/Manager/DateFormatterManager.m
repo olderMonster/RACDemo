@@ -56,6 +56,13 @@ static DateFormatterManager *sharedInstance = nil;
     
 }
 
+- (NSString *)releaseTime:(double)time{
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:time];
+    self.dateFormatter.dateFormat = @"yyyy年MM月dd日 HH时mm分";
+    NSString *dateStr = [self.dateFormatter stringFromDate:date];
+    return dateStr;
+}
+
 
 #pragma mark -- getters and setters
 - (NSDateFormatter *)dateFormatter{

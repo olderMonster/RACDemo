@@ -16,6 +16,7 @@
 CGFloat const kCommentUserNameFontSize = 12;
 CGFloat const kCommentCreateAtFontSize = 10;
 CGFloat const kCommentContentFontSize = 14;
+CGFloat const kCommentLikeCountFontSize = 13;
 
 @interface WallPaperCommentCell()
 
@@ -99,7 +100,7 @@ CGFloat const kCommentContentFontSize = 14;
         [_likeButton setTitleColor:[UIColor colorWithHex:@"bfbfbf"] forState:UIControlStateNormal];
         [_likeButton setTitleColor:[UIColor colorWithHex:@"1296db"] forState:UIControlStateSelected];
         
-        _likeButton.titleLabel.font = [UIFont systemFontOfSize:kLikeButtonCountFontSize];
+        _likeButton.titleLabel.font = [UIFont systemFontOfSize:kCommentLikeCountFontSize];
         
         [_likeButton addTarget:self action:@selector(likeCommentAction:) forControlEvents:UIControlEventTouchUpInside];
     }

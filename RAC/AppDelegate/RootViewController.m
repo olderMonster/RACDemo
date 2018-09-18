@@ -8,10 +8,12 @@
 
 #import "RootViewController.h"
 
-#import "HomeViewController.h"
+#import "ArticleViewController.h"
 #import "UserViewController.h"
 
 #import "CTMediator+WallPaper.h"
+#import "CTMediator+Article.h"
+#import "CTMediator+Video.h"
 
 @interface RootViewController ()
 
@@ -28,9 +30,13 @@
     [appearceBar setBarTintColor:[UIColor lightGrayColor]];
     [appearceBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     
-    HomeViewController *homeVC = [[HomeViewController alloc] init];
-    UINavigationController *homaNav = [[UINavigationController alloc] initWithRootViewController:homeVC];
-    homaNav.tabBarItem.title = @"首页";
+    UIViewController *articleVC = [[CTMediator sharedInstance] CTMediator_viewControllerForArticleViewController];
+    UINavigationController *articleNav = [[UINavigationController alloc] initWithRootViewController:articleVC];
+    articleNav.tabBarItem.title = @"美文";
+    
+    UIViewController *videoVC = [[CTMediator sharedInstance] CTMediator_viewControllerForVideoViewController];
+    UINavigationController *videoNav = [[UINavigationController alloc] initWithRootViewController:videoVC];
+    videoNav.tabBarItem.title = @"视频";
     
     UIViewController *wallpaperCategoryVC = [[CTMediator sharedInstance] CTMediator_viewControllerForWallPaperCategoryViewController];
     UINavigationController *wallpaperNav = [[UINavigationController alloc] initWithRootViewController:wallpaperCategoryVC];
@@ -40,7 +46,7 @@
     UINavigationController *userNav = [[UINavigationController alloc] initWithRootViewController:userVC];
     userNav.tabBarItem.title = @"我的";
     
-    self.viewControllers = @[homaNav,wallpaperNav,userNav];
+    self.viewControllers = @[articleNav,videoNav,wallpaperNav,userNav];
     
 }
 
