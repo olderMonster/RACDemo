@@ -10,6 +10,8 @@
 
 #import "RootViewController.h"
 
+#import "VideoViewController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -23,7 +25,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    RootViewController *rootVC = [[RootViewController alloc] init];
+    VideoViewController *rootVC = [[VideoViewController alloc] init];
     self.window.rootViewController = rootVC;
     [self.window makeKeyAndVisible];
     

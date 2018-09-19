@@ -13,6 +13,7 @@
 #import "VideoViewModel.h"
 
 #import "VideoCell.h"
+#import "TableViewCell.h"
 #import "OMSheetGridView.h"
 
 @interface VideoViewController ()<UITableViewDataSource , UITableViewDelegate , VideoCellDelegate , OMSheetGridViewDelegate>

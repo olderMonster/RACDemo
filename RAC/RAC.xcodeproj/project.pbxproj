@@ -18,6 +18,7 @@
 		571EB84A2151F411008695C7 /* MediaPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 571EB8492151F411008695C7 /* MediaPlayerView.m */; };
 		571F60B2214247200024C840 /* ForgotPsdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 571F60B1214247200024C840 /* ForgotPsdViewController.m */; };
 		571F60B721424B850024C840 /* CTMediator+Login.m in Sources */ = {isa = PBXBuildFile; fileRef = 571F60B621424B850024C840 /* CTMediator+Login.m */; };
+		5722F92B21524E5E004A2395 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5722F92A21524E5E004A2395 /* TableViewCell.m */; };
 		57247A5321474F420044D245 /* CTMediator+WallPaper.m in Sources */ = {isa = PBXBuildFile; fileRef = 57247A5221474F420044D245 /* CTMediator+WallPaper.m */; };
 		57247A5721474FFC0044D245 /* CTMediator+Download.m in Sources */ = {isa = PBXBuildFile; fileRef = 57247A5621474FFC0044D245 /* CTMediator+Download.m */; };
 		57247A5B214750610044D245 /* Target_Download.m in Sources */ = {isa = PBXBuildFile; fileRef = 57247A5A214750610044D245 /* Target_Download.m */; };
@@ -135,6 +136,8 @@
 		571F60B1214247200024C840 /* ForgotPsdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForgotPsdViewController.m; sourceTree = "<group>"; };
 		571F60B521424B850024C840 /* CTMediator+Login.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CTMediator+Login.h"; sourceTree = "<group>"; };
 		571F60B621424B850024C840 /* CTMediator+Login.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CTMediator+Login.m"; sourceTree = "<group>"; };
+		5722F92921524E5E004A2395 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		5722F92A21524E5E004A2395 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 		57247A5121474F420044D245 /* CTMediator+WallPaper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CTMediator+WallPaper.h"; sourceTree = "<group>"; };
 		57247A5221474F420044D245 /* CTMediator+WallPaper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CTMediator+WallPaper.m"; sourceTree = "<group>"; };
 		57247A5521474FFC0044D245 /* CTMediator+Download.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CTMediator+Download.h"; sourceTree = "<group>"; };
@@ -581,6 +584,8 @@
 			children = (
 				57189BD0214B97BD00DEF6C3 /* VideoCell.h */,
 				57189BD1214B97BD00DEF6C3 /* VideoCell.m */,
+				5722F92921524E5E004A2395 /* TableViewCell.h */,
+				5722F92A21524E5E004A2395 /* TableViewCell.m */,
 				571EB8482151F411008695C7 /* MediaPlayerView.h */,
 				571EB8492151F411008695C7 /* MediaPlayerView.m */,
 			);
@@ -852,7 +857,7 @@
 				TargetAttributes = {
 					57654F232138E94200E406F4 = {
 						CreatedOnToolsVersion = 9.0;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					57654F3B2138E94200E406F4 = {
 						CreatedOnToolsVersion = 9.0;
@@ -928,6 +933,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-RAC/Pods-RAC-resources.sh",
 				"${PODS_ROOT}/IDMPhotoBrowser/Classes/IDMPhotoBrowser.bundle",
 				"${PODS_ROOT}/IDMPhotoBrowser/Classes/IDMPBLocalizations.bundle",
+				"${PODS_ROOT}/JPVideoPlayer/JPVideoPlayer/JPVideoPlayer.bundle",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
 			);
@@ -937,6 +943,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IDMPhotoBrowser.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IDMPBLocalizations.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/JPVideoPlayer.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
 			);
@@ -987,6 +994,7 @@
 				57840A8F2147BB62004D299F /* WallPaperCommentCell.m in Sources */,
 				57BD91B621461B1D005762D0 /* WallPaperViewModel.m in Sources */,
 				57BD91C221465C79005762D0 /* WallPaperCell.m in Sources */,
+				5722F92B21524E5E004A2395 /* TableViewCell.m in Sources */,
 				574B92DD21424F87008891EE /* Target_Login.m in Sources */,
 				57BD91BF2146598C005762D0 /* WallPaperViewController.m in Sources */,
 				5737E6602148A7D000423E9E /* NSDate+RAC.m in Sources */,
@@ -1159,7 +1167,8 @@
 			baseConfigurationReference = 1F257DB26617E12DECE13ECD /* Pods-RAC.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Resource/Vendor",
@@ -1170,6 +1179,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ttpai.RAC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1179,7 +1189,8 @@
 			baseConfigurationReference = A600F6C72249C6AED4CDCA08 /* Pods-RAC.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Resource/Vendor",
@@ -1190,6 +1201,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ttpai.RAC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

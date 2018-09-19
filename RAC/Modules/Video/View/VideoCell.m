@@ -12,6 +12,8 @@
 #import "Video.h"
 #import "LikeButton.h"
 
+#import <JPVideoPlayer/JPVideoPlayerKit.h>
+
 #import "UIColor+RAC.h"
 
 static CGFloat kVideoCellTitleFontSize = 16;
@@ -24,6 +26,7 @@ CGFloat const kVideoCellAuthorInfoHeight = 50;
 
 @property (nonatomic , strong)UIImageView *coverImageView;
 @property (nonatomic , strong)UILabel *titleLabel;
+@property (nonatomic , strong)UIButton *playButton;
 
 @property (nonatomic , strong)UIImageView *avatarImageView;
 @property (nonatomic , strong)UILabel *nameLabel;
@@ -42,6 +45,7 @@ CGFloat const kVideoCellAuthorInfoHeight = 50;
         
         [self.contentView addSubview:self.coverImageView];
         [self.contentView addSubview:self.titleLabel];
+        [self.contentView addSubview:self.playButton];
         [self.contentView addSubview:self.avatarImageView];
         [self.contentView addSubview:self.nameLabel];
         [self.contentView addSubview:self.commentButton];
@@ -58,6 +62,10 @@ CGFloat const kVideoCellAuthorInfoHeight = 50;
         CGRect rect = [self.titleLabel.text boundingRectWithSize:CGSizeMake(self.contentView.bounds.size.width - 20, 80) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:self.titleLabel.font} context:nil];
         self.titleLabel.frame = CGRectMake(10, 10, rect.size.width, rect.size.height);
     }
+    
+    CGFloat playButtonSize = 40;
+    self.playButton.bounds = CGRectMake(0, 0, playButtonSize, playButtonSize);
+    self.playButton.center = self.coverImageView.center;
     
     self.avatarImageView.frame = CGRectMake(10, CGRectGetMaxY(self.coverImageView.frame) + 10, kVideoCellAuthorInfoHeight - 20, kVideoCellAuthorInfoHeight - 20);
     self.avatarImageView.layer.cornerRadius = self.avatarImageView.bounds.size.height * 0.5;
@@ -83,6 +91,23 @@ CGFloat const kVideoCellAuthorInfoHeight = 50;
     }
 }
 
+- (void)playAction{
+    if (self.playButton.selected) {
+        if (self.coverImageView.jp_playerStatus == JPVideoPlayerStatusPlaying) {
+            [self.coverImageView jp_pause];
+        }
+    }else{
+        if (self.coverImageView.jp_playerStatus == JPVideoPlayerStatusUnknown || self.coverImageView.jp_playerStatus == JPVideoPlayerStatusReadyToPlay) {
+            Video *video = (Video *)_media;
+            [self.coverImageView jp_playVideoWithURL:[NSURL URLWithString:video.playUrl]];
+        }
+        if (self.coverImageView.jp_playerStatus == JPVideoPlayerStatusPause) {
+            [self.coverImageView jp_resume];
+        }
+    }
+    self.playButton.selected = !self.playButton.selected;
+}
+
 
 #pragma mark -- getters and setters
 - (UIImageView *)coverImageView{
@@ -102,6 +127,17 @@ CGFloat const kVideoCellAuthorInfoHeight = 50;
     }
     return _titleLabel;
 }
+
+- (UIButton *)playButton{
+    if (_playButton == nil) {
+        _playButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_playButton setBackgroundImage:[UIImage imageNamed:@"video_play_btn"] forState:UIControlStateNormal];
+        [_playButton setBackgroundImage:[UIImage imageNamed:@"video_pause_btn"] forState:UIControlStateSelected];
+        [_playButton addTarget:self action:@selector(playAction) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _playButton;
+}
+
 
 - (UIImageView *)avatarImageView{
     if (_avatarImageView == nil) {
@@ -152,11 +188,11 @@ CGFloat const kVideoCellAuthorInfoHeight = 50;
         [self.avatarImageView rac_imageWithuUrl:video.author.icon];
         self.nameLabel.text = video.author.name;
         
-//        if (video.replyCount == 0) {
-//            [_commentButton setTitle:@"评论" forState:UIControlStateNormal];
-//        }else{
-//            [_commentButton setTitle:[NSString stringWithFormat:@"%ld",video.replyCount] forState:UIControlStateNormal];
-//        }
+        if (video.replyCount == 0) {
+            [_commentButton setTitle:@"评论" forState:UIControlStateNormal];
+        }else{
+            [_commentButton setTitle:[NSString stringWithFormat:@"%ld",video.replyCount] forState:UIControlStateNormal];
+        }
     }
 }
 

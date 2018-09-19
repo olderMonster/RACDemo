@@ -16,6 +16,7 @@ pod 'SDWebImage', '~> 4.0.0'
 pod 'IDMPhotoBrowser', '~> 1.11.3'
 pod 'SVProgressHUD', '~> 2.2.5'
 #pod 'Realm', '~> 3.8.0'
+pod 'JPVideoPlayer', '~> 3.1.1'
 
   target 'RACTests' do
     inherit! :search_paths
