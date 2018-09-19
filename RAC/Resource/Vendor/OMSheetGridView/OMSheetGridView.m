@@ -13,27 +13,12 @@
 #import "OMSheetGridCell.h"
 
 
-#define kSheetGridCellSize CGSizeMake([UIScreen mainScreen].bounds.size.width/5.0, 80)
-
 @interface OMSheetGridView()<UICollectionViewDataSource , UICollectionViewDelegate>
 
 @property (nonatomic , strong)UIView *backgroundView;
 
 @property (nonatomic , strong)UIView *contentView;
 @property (nonatomic , strong)UIButton *cancelButton;
-
-
-/**
- 透明背景颜色
- */
-@property (nonatomic , strong)UIColor *backgroundViewColor;
-
-/**
- 动画持续时间
- */
-@property (nonatomic , assign)CGFloat duration;
-
-
 
 
 @property (nonatomic , strong)NSArray <UICollectionView *>*collectionViewsArray;
@@ -46,10 +31,16 @@
 - (instancetype)init{
     self = [super init];
     if (self) {
-        _duration = 0.3;
         
         _backgroundViewColor = [UIColor blackColor];
-//        _backgroundViewColor = [UIColor colorWithHex:@"bfbfbf"];
+        _duration = 0.3;
+        _leftEdgeInset = 20;
+        _rightEdgeInset = 20;
+        _cols = 5;
+        _itemSize = CGSizeMake(([UIScreen mainScreen].bounds.size.width - _leftEdgeInset - _rightEdgeInset)/(float)_cols, 80);
+        _cancelButtonHeight = 40;
+        
+        
         [self addSubview:self.contentView];
         [self addSubview:self.cancelButton];
 
@@ -68,14 +59,14 @@
     [self.backgroundView addSubview:self];
     
     self.backgroundView.frame = [UIScreen mainScreen].bounds;
-    CGFloat contentViewH = self.itemsArray.count * kSheetGridCellSize.height;
-    self.contentView.frame = CGRectMake(20, 0,[UIScreen mainScreen].bounds.size.width - 40 , contentViewH);
-    self.cancelButton.frame = CGRectMake(self.contentView.frame.origin.x, CGRectGetMaxY(self.contentView.frame) + 10, self.contentView.bounds.size.width, 40);
+    CGFloat contentViewH = self.itemsArray.count * self.itemSize.height;
+    self.contentView.frame = CGRectMake(self.leftEdgeInset, 0,[UIScreen mainScreen].bounds.size.width - self.leftEdgeInset - self.rightEdgeInset , contentViewH);
+    self.cancelButton.frame = CGRectMake(self.contentView.frame.origin.x, CGRectGetMaxY(self.contentView.frame) + 10, self.contentView.bounds.size.width, _cancelButtonHeight);
     self.frame = CGRectMake(0, [UIScreen mainScreen].bounds.size.height, [UIScreen mainScreen].bounds.size.width, CGRectGetMaxY(self.cancelButton.frame) + 10);
     
     for (NSInteger index = 0; index < self.collectionViewsArray.count; index++) {
         UICollectionView *collectionView = self.collectionViewsArray[index];
-        collectionView.frame = CGRectMake(0, kSheetGridCellSize.height * index, self.contentView.bounds.size.width, kSheetGridCellSize.height);
+        collectionView.frame = CGRectMake(0, self.itemSize.height * index, self.contentView.bounds.size.width, self.itemSize.height);
         [collectionView reloadData];
     }
     
@@ -175,7 +166,7 @@
         UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
         flowLayout.minimumLineSpacing = 0;
         flowLayout.minimumInteritemSpacing = 0;
-        flowLayout.itemSize = kSheetGridCellSize;
+        flowLayout.itemSize = self.itemSize;
         flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
         collectionView.backgroundColor = [UIColor whiteColor];

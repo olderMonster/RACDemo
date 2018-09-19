@@ -19,4 +19,14 @@
     return self;
 }
 
+- (instancetype)initWithTitle:(NSString *)title iconImage:(UIImage *)iconImage type:(NSInteger)type{
+    self = [super init];
+    if (self) {
+        self.title = title;
+        self.iconImage = iconImage;
+        self.type = type;
+    }
+    return self;
+}
+
 @end

@@ -38,6 +38,8 @@ CGFloat const kVideoCellAuthorInfoHeight = 50;
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
+        
         [self.contentView addSubview:self.coverImageView];
         [self.contentView addSubview:self.titleLabel];
         [self.contentView addSubview:self.avatarImageView];

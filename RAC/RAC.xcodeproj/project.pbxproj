@@ -15,6 +15,7 @@
 		57189BD2214B97BD00DEF6C3 /* VideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 57189BD1214B97BD00DEF6C3 /* VideoCell.m */; };
 		57189BD8214B9C3D00DEF6C3 /* PlayInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 57189BD7214B9C3D00DEF6C3 /* PlayInfo.m */; };
 		57189BDB214BA59400DEF6C3 /* Media.m in Sources */ = {isa = PBXBuildFile; fileRef = 57189BDA214BA59400DEF6C3 /* Media.m */; };
+		571EB84A2151F411008695C7 /* MediaPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 571EB8492151F411008695C7 /* MediaPlayerView.m */; };
 		571F60B2214247200024C840 /* ForgotPsdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 571F60B1214247200024C840 /* ForgotPsdViewController.m */; };
 		571F60B721424B850024C840 /* CTMediator+Login.m in Sources */ = {isa = PBXBuildFile; fileRef = 571F60B621424B850024C840 /* CTMediator+Login.m */; };
 		57247A5321474F420044D245 /* CTMediator+WallPaper.m in Sources */ = {isa = PBXBuildFile; fileRef = 57247A5221474F420044D245 /* CTMediator+WallPaper.m */; };
@@ -80,6 +81,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		571EB83B2151E9BD008695C7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		1F257DB26617E12DECE13ECD /* Pods-RAC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RAC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RAC/Pods-RAC.debug.xcconfig"; sourceTree = "<group>"; };
 		26C3C1CFB932E20231B2A01E /* Pods-RACTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RACTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RACTests/Pods-RACTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -100,6 +114,23 @@
 		57189BD7214B9C3D00DEF6C3 /* PlayInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayInfo.m; sourceTree = "<group>"; };
 		57189BD9214BA59400DEF6C3 /* Media.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Media.h; sourceTree = "<group>"; };
 		57189BDA214BA59400DEF6C3 /* Media.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Media.m; sourceTree = "<group>"; };
+		571EB8212151E919008695C7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		571EB8232151E923008695C7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		571EB8252151E92C008695C7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		571EB8272151E937008695C7 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		571EB8292151E941008695C7 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		571EB82B2151E952008695C7 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
+		571EB82D2151E95C008695C7 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		571EB82F2151E963008695C7 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		571EB8312151E96A008695C7 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		571EB8332151E971008695C7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		571EB8352151E978008695C7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		571EB8372151E980008695C7 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
+		571EB8422151F0E9008695C7 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		571EB8442151F1B3008695C7 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		571EB8462151F294008695C7 /* libbz2.1.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.1.0.tbd; path = usr/lib/libbz2.1.0.tbd; sourceTree = SDKROOT; };
+		571EB8482151F411008695C7 /* MediaPlayerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MediaPlayerView.h; sourceTree = "<group>"; };
+		571EB8492151F411008695C7 /* MediaPlayerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MediaPlayerView.m; sourceTree = "<group>"; };
 		571F60B0214247200024C840 /* ForgotPsdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForgotPsdViewController.h; sourceTree = "<group>"; };
 		571F60B1214247200024C840 /* ForgotPsdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForgotPsdViewController.m; sourceTree = "<group>"; };
 		571F60B521424B850024C840 /* CTMediator+Login.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CTMediator+Login.h"; sourceTree = "<group>"; };
@@ -550,6 +581,8 @@
 			children = (
 				57189BD0214B97BD00DEF6C3 /* VideoCell.h */,
 				57189BD1214B97BD00DEF6C3 /* VideoCell.m */,
+				571EB8482151F411008695C7 /* MediaPlayerView.h */,
+				571EB8492151F411008695C7 /* MediaPlayerView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -745,6 +778,21 @@
 		C3B86E86BDE1BCDCE7A23D4A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				571EB8462151F294008695C7 /* libbz2.1.0.tbd */,
+				571EB8442151F1B3008695C7 /* libc++.tbd */,
+				571EB8422151F0E9008695C7 /* CoreAudio.framework */,
+				571EB8372151E980008695C7 /* VideoToolbox.framework */,
+				571EB8352151E978008695C7 /* UIKit.framework */,
+				571EB8332151E971008695C7 /* QuartzCore.framework */,
+				571EB8312151E96A008695C7 /* OpenGLES.framework */,
+				571EB82F2151E963008695C7 /* MobileCoreServices.framework */,
+				571EB82D2151E95C008695C7 /* MediaPlayer.framework */,
+				571EB82B2151E952008695C7 /* libbz2.tbd */,
+				571EB8292151E941008695C7 /* CoreVideo.framework */,
+				571EB8272151E937008695C7 /* CoreMedia.framework */,
+				571EB8252151E92C008695C7 /* CoreGraphics.framework */,
+				571EB8232151E923008695C7 /* AVFoundation.framework */,
+				571EB8212151E919008695C7 /* AudioToolbox.framework */,
 				C07B8F24BB4C03F917661D3A /* libPods-RAC.a */,
 				C4D3BAF681FDC3B2331D9258 /* libPods-RACTests.a */,
 			);
@@ -763,6 +811,7 @@
 				57654F212138E94200E406F4 /* Frameworks */,
 				57654F222138E94200E406F4 /* Resources */,
 				B0B4AB19F80665F9CE332BBC /* [CP] Copy Pods Resources */,
+				571EB83B2151E9BD008695C7 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -951,6 +1000,7 @@
 				5737E6662148B3D500423E9E /* UIImageView+RAC.m in Sources */,
 				57BD91BC21461E66005762D0 /* WallPaperCategory.m in Sources */,
 				57247A5B214750610044D245 /* Target_Download.m in Sources */,
+				571EB84A2151F411008695C7 /* MediaPlayerView.m in Sources */,
 				57840A982147C465004D299F /* WallPaperCommentCellFrame.m in Sources */,
 				576C08362150A44E00DFA2B9 /* OMSheetGridView.m in Sources */,
 				57D9BE4B2142522B0018D5D3 /* RegisterViewController.m in Sources */,
@@ -1110,6 +1160,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Resource/Vendor",
+					"$(PROJECT_DIR)/RAC",
+				);
 				INFOPLIST_FILE = RAC/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1125,6 +1180,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Resource/Vendor",
+					"$(PROJECT_DIR)/RAC",
+				);
 				INFOPLIST_FILE = RAC/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -27,6 +27,46 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic , strong)NSArray <NSArray *>*itemsArray;
 
+
+/**
+ 透明背景颜色
+ */
+@property (nonatomic , strong)UIColor *backgroundViewColor;
+
+/**
+ 动画持续时间
+ */
+@property (nonatomic , assign)CGFloat duration;
+
+/**
+ 左边距
+ */
+@property (nonatomic , assign)CGFloat leftEdgeInset;
+
+
+/**
+ 右边距
+ */
+@property (nonatomic , assign)CGFloat rightEdgeInset;
+
+
+/**
+ 每个item的size
+ */
+@property (nonatomic , assign)CGSize itemSize;
+
+
+/**
+ 列数
+ */
+@property (nonatomic , assign)NSInteger cols;
+
+
+/**
+ 取消按钮高度
+ */
+@property (nonatomic , assign)CGFloat cancelButtonHeight;
+
 @property (nonatomic , weak)id<OMSheetGridViewDelegate>delegate;
 
 - (void)show;
